@@ -5,8 +5,12 @@ import Detail from "./routers/Detail";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/detail/:id" element={<Detail />} />
+      <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
+      <Route
+        basename={process.env.PUBLIC_URL}
+        path="/detail/:id"
+        element={<Detail />}
+      />
     </Routes>
   );
 }
